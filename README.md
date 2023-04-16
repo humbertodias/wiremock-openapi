@@ -20,13 +20,23 @@ https://app.wiremock.cloud/
 
 Reload mapping
 
-curl  http://localhost:8085/__admin/mappings/reset 
+curl -XPOST http://localhost:8085/__admin/mappings/reset
+
+Swagger
+
+http://localhost:8085/__admin/swagger-ui/
+
+Recorder
+
+http://localhost:8085/__admin/recorder/
 
 # Prism
 
 Binary
 
     curl -L https://raw.githack.com/stoplightio/prism/master/install | sudo sh
+
+    prism mock --dynamic -h 0.0.0.0 openapi.yml
 
 Docker
 
