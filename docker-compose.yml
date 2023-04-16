@@ -12,6 +12,15 @@ services:
       - ./mappings:/home/wiremock/mappings
       - ./extensions:/var/wiremock/extensions
 
+  wiremock-studio:
+    image: up9inc/wiremock-studio
+    ports:
+      - "9000:9000"
+    volumes:
+      - ./__files:/home/wiremock/__files
+      - ./mappings:/home/wiremock/mappings
+      - ./extensions:/var/wiremock/extensions
+
   prism:
     platform: linux/amd64
     image: stoplight/prism
@@ -19,4 +28,4 @@ services:
     volumes:
       - ./openapi.yml:/tmp/api.oas3.yml:ro
     ports:
-      - '4010:4010'
+      - "4010:4010"
