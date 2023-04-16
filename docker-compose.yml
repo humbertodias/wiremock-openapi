@@ -8,24 +8,24 @@ services:
       - "8085:8085"
     command: --verbose --global-response-templating --port 8085
     volumes:
-      - ./__files:/home/wiremock/__files
-      - ./mappings:/home/wiremock/mappings
-      - ./extensions:/var/wiremock/extensions
+      - ./wiremock/__files:/home/wiremock/__files
+      - ./wiremock/mappings:/home/wiremock/mappings
+      - ./wiremock/extensions:/var/wiremock/extensions
 
   wiremock-studio:
     image: up9inc/wiremock-studio
     ports:
       - "9000:9000"
     volumes:
-      - ./__files:/home/wiremock/__files
-      - ./mappings:/home/wiremock/mappings
-      - ./extensions:/var/wiremock/extensions
+      - ./wiremock/__files:/home/wiremock/__files
+      - ./wiremock/mappings:/home/wiremock/mappings
+      - ./wiremock/extensions:/var/wiremock/extensions
 
   prism:
     platform: linux/amd64
     image: stoplight/prism
     command: 'mock -h 0.0.0.0 /tmp/api.oas3.yml'
     volumes:
-      - ./openapi.yml:/tmp/api.oas3.yml:ro
+      - ./prism/openapi.yml:/tmp/api.oas3.yml:ro
     ports:
       - "4010:4010"

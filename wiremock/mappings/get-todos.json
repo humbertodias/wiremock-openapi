@@ -5,6 +5,7 @@
     },
     "response": {
         "status": 200,
+        "transformers": ["response-template"],
         "jsonBody": [
             {
                 "id": "d8b25784-c16f-449a-9006-6972e8a9111b",
@@ -22,5 +23,6 @@
         "headers": {
             "Content-Type": "application/json"
         }
+        
     }
 }

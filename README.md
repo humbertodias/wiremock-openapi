@@ -18,6 +18,10 @@ https://app.wiremock.cloud/
 
 14 days trial
 
+Reload mapping
+
+curl  http://localhost:8085/__admin/mappings/reset 
+
 # Prism
 
 Binary
@@ -26,14 +30,12 @@ Binary
 
 Docker
 
-    docker run --init -p 4010:4010 stoplight/prism mock -h 0.0.0.0 people-openapi.yml
-
-## Graphql
-
-npm i -g openapi-to-graphql-cli
-
-openapi-to-graphql-cli openapi.yml --save graphql.yml
+    docker run --rm --platform linux/amd64 -v $(pwd)/prism:/root/apis -p 9003:4010 -t stoplight/prism mock --dynamic -h 0.0.0.0 /root/apis/openapi.yml
 
 ## References
 
+* [wiremock-chrome-extension](https://www.mwtestconsultancy.co.uk/wiremock-chrome-extension)
 * [prism](https://docs.stoplight.io/docs/prism/cfa6f7191e544-errors)
+* [how-to-mock-http-servers-with-stoplight-prism-openapi](https://11sigma.com/blog/2019/10/11/how-to-mock-http-servers-with-stoplight-prism-openapi)
+* [prism-docs](https://docs.stoplight.io/docs/prism)
+* [vscode-rest-client](https://marketplace.visualstudio.com/items?itemName=humao.rest-client)

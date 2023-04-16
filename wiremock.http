@@ -1,0 +1,7 @@
+GET /api/v1/todos HTTP/1.1
+Host: localhost:8085
+
+###
+
+GET /api/v1/todos/d8b25784-c16f-449a-9006-6972e8a9111b HTTP/1.1
+Host: localhost:8085
