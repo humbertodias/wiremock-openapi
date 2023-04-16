@@ -1,0 +1,288 @@
+{
+  "mappings" : [ {
+    "id" : "437a1be9-9efb-4716-8239-aa4208bf960e",
+    "name" : "Returns all pets from the system that the user has access to",
+    "request" : {
+      "urlPath" : "/pets",
+      "method" : "GET"
+    },
+    "response" : {
+      "status" : 200,
+      "body" : "[ {\n  \"name\" : \"Phebe Lehner\",\n  \"tag\" : \"expedita\",\n  \"id\" : 6137546356583794141\n}, {\n  \"name\" : \"Mickey Stoltenberg\",\n  \"tag\" : \"dolores\",\n  \"id\" : 8114084322863460068\n}, {\n  \"name\" : \"Isaiah Gibson\",\n  \"tag\" : \"aut\",\n  \"id\" : 6410576364588137014\n}, {\n  \"name\" : \"Evangeline Hauck\",\n  \"tag\" : \"dignissimos\",\n  \"id\" : 4990506160824429965\n} ]",
+      "headers" : {
+        "Content-Type" : "application/json"
+      }
+    },
+    "uuid" : "437a1be9-9efb-4716-8239-aa4208bf960e",
+    "persistent" : true,
+    "metadata" : {
+      "mocklab" : {
+        "created" : {
+          "at" : "2023-04-16T04:15:35.915209144Z",
+          "via" : "IMPORT",
+          "by" : "zz8oe"
+        }
+      }
+    }
+  }, {
+    "id" : "ab523acc-5977-4e03-b9c5-6fbb12ac0dbc",
+    "name" : "Creates a new pet in the store. Duplicates are allowed",
+    "request" : {
+      "urlPath" : "/pets",
+      "method" : "POST"
+    },
+    "response" : {
+      "status" : 200,
+      "body" : "{\n  \"name\" : \"Mrs. Sau Conn\",\n  \"tag\" : \"quibusdam\",\n  \"id\" : 6996166806619036751\n}",
+      "headers" : {
+        "Content-Type" : "application/json"
+      }
+    },
+    "uuid" : "ab523acc-5977-4e03-b9c5-6fbb12ac0dbc",
+    "persistent" : true,
+    "metadata" : {
+      "mocklab" : {
+        "created" : {
+          "at" : "2023-04-16T04:15:35.911646486Z",
+          "via" : "IMPORT",
+          "by" : "zz8oe"
+        }
+      }
+    }
+  }, {
+    "id" : "5261c481-33c8-4f86-a979-e7b3dab1ae10",
+    "name" : "Returns a user based on a single ID, if the user does not have access to the pet",
+    "request" : {
+      "urlPath" : "/pets/3781766237141047736",
+      "method" : "GET"
+    },
+    "response" : {
+      "status" : 200,
+      "body" : "{\n  \"name\" : \"Leandro Windler\",\n  \"tag\" : \"vero\",\n  \"id\" : 431986847459427401\n}",
+      "headers" : {
+        "Content-Type" : "application/json"
+      }
+    },
+    "uuid" : "5261c481-33c8-4f86-a979-e7b3dab1ae10",
+    "persistent" : true,
+    "metadata" : {
+      "mocklab" : {
+        "created" : {
+          "at" : "2023-04-16T04:15:35.908329233Z",
+          "via" : "IMPORT",
+          "by" : "zz8oe"
+        }
+      }
+    }
+  }, {
+    "id" : "7acfec15-a990-4f0b-8633-9797ddb42aee",
+    "name" : "deletes a single pet based on the ID supplied - 204",
+    "request" : {
+      "urlPath" : "/pets/5073407215408417784",
+      "method" : "DELETE"
+    },
+    "response" : {
+      "status" : 204
+    },
+    "uuid" : "7acfec15-a990-4f0b-8633-9797ddb42aee",
+    "persistent" : true,
+    "metadata" : {
+      "mocklab" : {
+        "created" : {
+          "at" : "2023-04-16T04:15:35.902352672Z",
+          "via" : "IMPORT",
+          "by" : "zz8oe"
+        }
+      }
+    }
+  }, {
+    "id" : "6bee1293-b564-497b-9d91-c5ddf58eabe2",
+    "name" : "GET a JSON resource",
+    "request" : {
+      "url" : "/json/1",
+      "method" : "GET"
+    },
+    "response" : {
+      "status" : 200,
+      "body" : "{\n  \"id\": 1,\n  \"value\": \"things\"\n}",
+      "headers" : {
+        "Content-Type" : "application/json; charset=UTF-8"
+      }
+    },
+    "uuid" : "6bee1293-b564-497b-9d91-c5ddf58eabe2",
+    "persistent" : true,
+    "priority" : 5,
+    "metadata" : {
+      "mocklab" : {
+        "created" : {
+          "at" : "2023-04-16T04:14:53.573278148Z",
+          "via" : "SYSTEM"
+        }
+      }
+    }
+  }, {
+    "id" : "045c48d4-dcec-4a98-afd8-a1b0b4d4e18e",
+    "name" : "Match a JSON POST on the request body",
+    "request" : {
+      "url" : "/json",
+      "method" : "POST",
+      "bodyPatterns" : [ {
+        "equalToJson" : "{\n  \"id\": 12345,\n  \"value\": \"abc-def-ghi\"\n}"
+      } ]
+    },
+    "response" : {
+      "status" : 201,
+      "body" : "{\n  \"message\": \"Success\"\n}",
+      "headers" : {
+        "Content-Type" : "application/json; charset=UTF-8"
+      }
+    },
+    "uuid" : "045c48d4-dcec-4a98-afd8-a1b0b4d4e18e",
+    "persistent" : true,
+    "priority" : 5,
+    "metadata" : {
+      "mocklab" : {
+        "created" : {
+          "at" : "2023-04-16T04:14:53.573214744Z",
+          "via" : "SYSTEM"
+        }
+      }
+    }
+  }, {
+    "id" : "66a03891-48b6-41e3-8f8e-f05a50feb692",
+    "name" : "Only match if Accept header is for application/json",
+    "request" : {
+      "url" : "/json/2",
+      "method" : "PUT",
+      "headers" : {
+        "Accept" : {
+          "contains" : "application/json"
+        }
+      }
+    },
+    "response" : {
+      "status" : 200,
+      "body" : "{\n  \"message\": \"Success\"\n}",
+      "headers" : { }
+    },
+    "uuid" : "66a03891-48b6-41e3-8f8e-f05a50feb692",
+    "persistent" : true,
+    "priority" : 5,
+    "metadata" : {
+      "mocklab" : {
+        "created" : {
+          "at" : "2023-04-16T04:14:53.573123434Z",
+          "via" : "SYSTEM"
+        }
+      }
+    }
+  }, {
+    "id" : "83cee299-065d-40c1-9e48-32d06e369718",
+    "name" : "Only match if query parameter is present and in the correct format",
+    "request" : {
+      "urlPath" : "/search",
+      "method" : "GET",
+      "queryParameters" : {
+        "q" : {
+          "matches" : "[A-Za-z0-9]*"
+        }
+      }
+    },
+    "response" : {
+      "status" : 200,
+      "body" : "<results>\n  <result>one</result>\n  <result>two</result>\n  <result>three</result>\n</results>",
+      "headers" : {
+        "Content-Type" : "application/xml; charset=UTF-8"
+      }
+    },
+    "uuid" : "83cee299-065d-40c1-9e48-32d06e369718",
+    "persistent" : true,
+    "priority" : 5,
+    "metadata" : {
+      "mocklab" : {
+        "created" : {
+          "at" : "2023-04-16T04:14:53.573071581Z",
+          "via" : "SYSTEM"
+        }
+      }
+    }
+  }, {
+    "id" : "e19c7fa9-a3f4-4b96-9013-9ae639f26c3a",
+    "name" : "Delayed response",
+    "request" : {
+      "url" : "/delayed",
+      "method" : "GET"
+    },
+    "response" : {
+      "status" : 200,
+      "body" : "\nThis will appear after about 2 seconds!\n",
+      "headers" : { },
+      "fixedDelayMilliseconds" : 2000
+    },
+    "uuid" : "e19c7fa9-a3f4-4b96-9013-9ae639f26c3a",
+    "persistent" : true,
+    "priority" : 5,
+    "metadata" : {
+      "mocklab" : {
+        "created" : {
+          "at" : "2023-04-16T04:14:53.573024856Z",
+          "via" : "SYSTEM"
+        }
+      }
+    }
+  }, {
+    "id" : "74b4a6d2-5792-43b2-b68b-d57b788d7cba",
+    "name" : "Fault - connection prematurely closed by the server",
+    "request" : {
+      "url" : "/fault",
+      "method" : "DELETE"
+    },
+    "response" : {
+      "status" : 200,
+      "fault" : "EMPTY_RESPONSE"
+    },
+    "uuid" : "74b4a6d2-5792-43b2-b68b-d57b788d7cba",
+    "persistent" : true,
+    "priority" : 5,
+    "metadata" : {
+      "mocklab" : {
+        "created" : {
+          "at" : "2023-04-16T04:14:53.572990268Z",
+          "via" : "SYSTEM"
+        }
+      }
+    }
+  }, {
+    "id" : "13b4dc84-2eb1-4852-ab5e-52a099fc1ea4",
+    "name" : "Show uppercased request header value in the response body using Handlebars templating",
+    "request" : {
+      "url" : "/templated",
+      "method" : "GET",
+      "headers" : {
+        "X-My-Header" : {
+          "matches" : "my_value_[0-9]{5}"
+        }
+      }
+    },
+    "response" : {
+      "status" : 200,
+      "body" : "My header value is: {{upper request.headers.X-My-Header}}\n",
+      "headers" : { },
+      "transformers" : [ "response-template" ]
+    },
+    "uuid" : "13b4dc84-2eb1-4852-ab5e-52a099fc1ea4",
+    "persistent" : true,
+    "priority" : 5,
+    "metadata" : {
+      "mocklab" : {
+        "created" : {
+          "at" : "2023-04-16T04:14:53.57260976Z",
+          "via" : "SYSTEM"
+        }
+      }
+    }
+  } ],
+  "meta" : {
+    "total" : 11
+  }
+}

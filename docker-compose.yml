@@ -1,0 +1,22 @@
+version: "3" 
+
+services:
+
+  wiremock:
+    image: wiremock/wiremock
+    ports:
+      - "8085:8085"
+    command: --verbose --global-response-templating --port 8085
+    volumes:
+      - ./__files:/home/wiremock/__files
+      - ./mappings:/home/wiremock/mappings
+      - ./extensions:/var/wiremock/extensions
+
+  prism:
+    platform: linux/amd64
+    image: stoplight/prism
+    command: 'mock -h 0.0.0.0 /tmp/api.oas3.yml'
+    volumes:
+      - ./openapi.yml:/tmp/api.oas3.yml:ro
+    ports:
+      - '4010:4010'
